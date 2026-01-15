@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>満点を目指せ！3択クイズ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- 初期画面 -->
+        <div id="start-screen" class="screen active">
+            <div class="subtitle" id="game-subtitle">満点を目指せ！</div>
+            <h1 class="title" id="game-title">DQ10 3択クイズ<span id="title-stars"></span></h1>
+            <div class="input-container">
+                <input type="text" id="nickname-input" placeholder="ニックネームを入力 (任意)" maxlength="10">
+            </div>
+            <p class="disclaimer">プレイするバージョンを選択してください
+            </p>
+            <div class="button-container">
+                <button id="start-v1-btn" class="btn primary-btn">Ver 1.0 (目覚めし五つの種族)</button>
+                <button id="start-v2-btn" class="btn primary-btn">Ver 2.0 (眠れる勇者と導きの盟友)</button>
+                <div style="height: 20px;"></div> <!-- Spacer for "one line break" -->
+                <button id="exit-btn-start" class="btn secondary-btn">終了</button>
+            </div>
+        </div>
+
+        <!-- クイズ画面 -->
+        <div id="quiz-screen" class="screen">
+            <div class="top-half">
+                <div id="question-image-container">
+                    <img id="question-image" src="" alt="Question Image">
+                </div>
+            </div>
+            <div class="bottom-half">
+                <div class="left-quarter">
+                    <div class="copyright-notice">© 2012-2026 SQUARE ENIX CO., LTD. All Rights Reserved. © SUGIYAMA KOBO
+                    </div>
+                    <div class="info-bar">
+                        <span id="question-number">第1問</span>
+                    </div>
+                    <div id="question-text">ここに問題文が表示されます</div>
+                </div>
+                <div class="right-quarter">
+                    <div class="answer-legend">青：正解　　赤：不正解</div>
+                    <div id="options-container">
+                        <button class="option-btn" data-index="0">選択肢1</button>
+                        <button class="option-btn" data-index="1">選択肢2</button>
+                        <button class="option-btn" data-index="2">選択肢3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結果ポップアップ -->
+        <div id="result-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2 id="result-title">ゲーム終了！</h2>
+                <p id="result-message"></p>
+
+                <div id="ranking-section">
+                    <h3>ランキング TOP 10</h3>
+                    <div class="ranking-header">
+                        <span class="rank-place">順位</span>
+                        <span class="rank-name">ニックネーム</span>
+                        <span class="rank-score">正解数</span>
+                        <span class="rank-time">時間</span>
+                    </div>
+                    <div id="ranking-list">
+                        <!-- ランキングがここに表示されます -->
+                        <div class="ranking-item empty">ランキングデータはありません</div>
+                    </div>
+                </div>
+
+                <div class="popup-buttons">
+                    <button id="restart-btn" class="btn primary-btn">再開</button>
+                    <button id="exit-btn-popup" class="btn secondary-btn">終了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 情報ポップアップ -->
+    <div id="info-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2 class="info-title">プレイ回数</h2>
+            <p id="info-play-count" class="play-count-display">0回</p>
+            <div class="version-info" id="version-info-container">
+            </div>
+            <div class="popup-buttons">
+                <button id="close-info-btn" class="btn secondary-btn">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="ranking.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
