@@ -125,7 +125,7 @@ class QuizGame {
 
     setVersionInfo() {
         this.versionInfoContainer.innerHTML = `
-            <p>ver.1.0.1</p>
+            <p>ver.1.0.2</p>
             <p>production by M.F. (Frieren:ID QH407-429)</p>
         `;
     }
