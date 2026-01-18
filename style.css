@@ -601,6 +601,13 @@ body {
         font-size: 0.8rem;
         margin-bottom: 20px;
     }
+
+    .copyright-notice {
+        position: relative;
+        top: auto;
+        margin-bottom: 5px;
+        font-size: 0.6rem;
+    }
 }
 
 /* Info Popup Styles */
